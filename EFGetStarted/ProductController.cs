@@ -1,4 +1,5 @@
-﻿using Spectre.Console;
+﻿using EFGetStarted.Models;
+using Spectre.Console;
 
 namespace EFGetStarted
 {
@@ -37,7 +38,7 @@ namespace EFGetStarted
         internal static Product GetProductById(int id)
         {
             using var db = new ProductsContext();
-            var product = db.Products.SingleOrDefault(product => product.Id.Equals(id));
+            var product = db.Products.SingleOrDefault(product => product.ProductId.Equals(id));
             return product;
 
         }

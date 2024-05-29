@@ -1,4 +1,5 @@
-﻿using Spectre.Console;
+﻿using EFGetStarted.Models;
+using Spectre.Console;
 
 namespace EFGetStarted
 {
@@ -11,7 +12,7 @@ namespace EFGetStarted
             var option = AnsiConsole.Prompt(new SelectionPrompt<string>()
                 .Title("Choose Product")
                 .AddChoices(productsArray));
-            var id = products.Single(product => product.Name.Equals(option)).Id;
+            var id = products.Single(product => product.Name.Equals(option)).ProductId;
             var product = ProductController.GetProductById(id);
             return product;
         }
